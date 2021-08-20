@@ -1,0 +1,102 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json",
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "include": ["src/**/*.ts"]
+  },
+  "extends": [
+    "airbnb",
+    "react-app",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:import/errors",
+    "plugin:import/warnings",
+    "plugin:import/typescript",
+    "eslint-config-prettier"
+  ],
+  "plugins": ["react", "@typescript-eslint", "prettier", "import"],
+  "rules": {
+    "no-undefined": "warn",
+    "no-unused-vars": "off",
+    "no-console": "warn",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react/prop-types": "off",
+    "react/jsx-wrap-multilines": "off",
+    "react/destructuring-assignment": "off",
+    "import/prefer-default-export": "off",
+    "import/no-extraneous-dependencies": "off",
+    "@typescript-eslint/semi": ["warn"],
+    "arrow-body-style": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }],
+    "import/no-unresolved": [
+      2,
+      {
+        "commonjs": true,
+        "amd": true
+      }
+    ],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/no-empty-function": "warn",
+    "@typescript-eslint/no-explicit-any": "off",
+    "react/jsx-filename-extension": "off",
+    "react/jsx-props-no-spreading": "off",
+    "no-inferrable-types": "off",
+    "camelcase": "off",
+    "import/no-cycle": "off",
+    "no-shadow": "off",
+    "import/order": [
+      "error",
+      {
+        "groups": ["builtin", "external", "internal"],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".ts", ".d.ts", ".tsx", ".js", ".jsx"],
+        "moduleDirectory": ["node_modules", "src"]
+      }
+    }
+  }
+}
